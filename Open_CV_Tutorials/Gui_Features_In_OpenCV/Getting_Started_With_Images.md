@@ -53,3 +53,40 @@ A screenshot of the window will look like this (in Fedora-Gnome machine):
 
 
 ![Image](Images/opencv_screenshot.jpg)
+
+**cv2.waitKey()** is a keyboard binding function. Its argument is the time in milliseconds. The function waits for specified milliseconds for any keyboard event. If you press any key in that time, the program continues. If 0 is passed, it waits indefinitely for a key stroke. It can also be set to detect specific key strokes like, if key a is pressed etc which we will discuss below.
+
+**cv2.destroyAllWindows()** simply destroys all the windows we created. If you want to destroy any specific window, use the function cv2.destroyWindow() where you pass the exact window name as the argument.
+
+
+**Note**- There is a special case where you can already create a window and load image to it later. In that case, you can specify whether window is resizable or not. It is done with the function    **cv2.namedWindow()**. 
+
+By default, the flag is `cv2.WINDOW_AUTOSIZE`. But if you specify flag to be `cv2.WINDOW_NORMAL`, you can resize window. 
+
+It will be helpful when image is too large in dimension and adding track bar to windows.
+
+See the below code:- 
+
+```python
+cv2.namedWindow('image', cv2.WINDOW_NORMAL)
+cv2.imshow('image',img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+
+### Write an Image
+
+
+Use the function **cv2.imwrite()** to save an image.
+
+First argument is the file name, second argument is the image you want to save.
+
+```python
+cv2.imwrite('messigray.png',img)
+```
+
+This will save the image in PNG format in the working directory.
+
+
+
