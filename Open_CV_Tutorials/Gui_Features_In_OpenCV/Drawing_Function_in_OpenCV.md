@@ -88,6 +88,21 @@ So it is time to see the final result of our drawing.
 
 As we already know, how to display the image to see it.
 
+```python
+import cv2 
+path = r'Images/drawing.jpg'
+image = cv2.imread(path) 
+window_name = 'Image'
+font = cv2.FONT_HERSHEY_SIMPLEX
+org = (50, 50) 
+fontScale = 1
+color = (255, 0, 0) 
+thickness = 2
+image = cv2.putText(image, 'OpenCV', org, font,  
+                   fontScale, color, thickness, cv2.LINE_AA)
+                   
+cv2.imshow(window_name, image) 
 
+```
 
 ![Image](Images/drawing.jpg)
